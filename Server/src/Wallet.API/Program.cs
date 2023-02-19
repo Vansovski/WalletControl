@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using Wallet.Application;
+using Wallet.Application.Interfaces;
 using Wallet.Persistence;
+using Wallet.Persistence.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +17,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<WalletContext>(
     context => context.UseSqlite(builder.Configuration.GetConnectionString("Default"))
 );
+
+
+//Injeção de Dependencia
+builder.Services.AddScoped<IFlowService, FlowService>();
+builder.Services.AddScoped<IGeralPersistence, GeralPersistence>();
+builder.Services.AddScoped<IFlowPersistence, FlowPersistence>();
 
 var app = builder.Build();
 

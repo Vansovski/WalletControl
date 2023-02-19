@@ -1,6 +1,6 @@
 namespace Wallet.Domain;
 
-public class ItemExpense
+public class ExpenseItem
 {
     public int ExpenseId { get; set; }
     public Expense? Expense { get; set; }

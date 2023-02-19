@@ -9,5 +9,5 @@ public class Flow
     public KindFlow Kind { get; set; }
     public bool Active { get; set; }
 
-    public IEnumerable<CenterFlow>? Centers { get; set; }
+    public IEnumerable<FlowCenter>? Centers { get; set; }
 }

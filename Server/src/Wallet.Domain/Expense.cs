@@ -7,5 +7,5 @@ public class Expense
     public double  PercentOfCenterFlow { get; set; }
     public double TotalAmount { get; set; }
 
-    public IEnumerable<ItemExpense>? Items { get; set; }
+    public IEnumerable<ExpenseItem>? Items { get; set; }
 }

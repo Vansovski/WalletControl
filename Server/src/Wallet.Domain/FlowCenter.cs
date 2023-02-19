@@ -1,6 +1,6 @@
 namespace Wallet.Domain;
 
-public class CenterFlow
+public class FlowCenter
 {
     public int Id { get; set; }
     public string? Name { get; set; }

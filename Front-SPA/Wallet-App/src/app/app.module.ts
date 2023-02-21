@@ -9,6 +9,7 @@ import { FlowsComponent } from './flows/flows.component';
 import { FlowCentersComponent } from './flow-centers/flow-centers.component';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { ExpensesItemsComponent } from './expenses/expenses-items/expenses-items.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ExpensesItemsComponent } from './expenses/expenses-items/expenses-items
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

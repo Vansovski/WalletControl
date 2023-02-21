@@ -24,7 +24,14 @@ builder.Services.AddScoped<IFlowService, FlowService>();
 builder.Services.AddScoped<IGeralPersistence, GeralPersistence>();
 builder.Services.AddScoped<IFlowPersistence, FlowPersistence>();
 
+builder.Services.AddCors();
+
 var app = builder.Build();
+
+app.UseCors(access => access.AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowAnyOrigin()
+);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

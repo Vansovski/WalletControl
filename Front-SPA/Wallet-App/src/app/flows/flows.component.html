@@ -1,7 +1,29 @@
-<h1>flows works!</h1>
+<h1></h1>
 
-<div *ngFor="let flow of flows">
-  <p>Fluxo ===> {{flow.name}}</p>
-  <p>Tipo de fluxo ===> {{flow.kind}}</p>
-  <hr>
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+    <div class="col align-self-start">
+      <h3 class="fw-bold">Meus fluxos de entrada e saída</h3>
+      <p class="text-muted">
+        Paragraph of text beneath the heading to explain the heading. We'll add
+        onto it with another sentence and probably just keep going until we run
+        out of words.
+      </p>
+      <a href="#" class="btn btn-primary btn-lg">Criar novo fluxo</a>
+    </div>
+
+    <div class="col">
+      <div class="row row-cols-1 row-cols-sm-2 g-4">
+        <div class="col d-flex flex-column gap-2" *ngFor="let flow of flows">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ flow.name }}</h5>
+              <p class="card-text">>Descrição do fluxo.</p>
+              <a href="#" class="btn btn-primary">Entrar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

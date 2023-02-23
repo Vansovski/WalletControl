@@ -10,6 +10,8 @@ import { FlowCentersComponent } from './flow-centers/flow-centers.component';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { ExpensesItemsComponent } from './expenses/expenses-items/expenses-items.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavComponent } from './nav/nav.component';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 @NgModule({
   declarations: [
@@ -17,13 +19,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FlowsComponent,
     FlowCentersComponent,
     ExpensesComponent,
-    ExpensesItemsComponent
+    ExpensesItemsComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    CollapseModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

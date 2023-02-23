@@ -4,10 +4,10 @@
   <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
     <div class="col align-self-start">
       <h3 class="fw-bold">Meus fluxos de entrada e saída</h3>
-      <p class="text-muted">
-        Paragraph of text beneath the heading to explain the heading. We'll add
-        onto it with another sentence and probably just keep going until we run
-        out of words.
+      <p class="text">
+        Nesta aréa você pode criar e gerenciar seus fluxos, tanto de entrada quanto de saída.
+        É possível associar os fluxos entre si, sempre no sentido da um fluxo entrada alimentar 1 ou mais fluxos de saída,
+        e 1 fluxo de saída alimentar 1 ou mais fluxos de entrada.
       </p>
       <a href="#" class="btn btn-primary btn-lg">Criar novo fluxo</a>
     </div>
@@ -19,7 +19,10 @@
             <div class="card-body">
               <h5 class="card-title">{{ flow.name }}</h5>
               <p class="card-text">>Descrição do fluxo.</p>
-              <a href="#" class="btn btn-primary">Entrar</a>
+              <div>
+                <a routerLink="flowCenters" class="btn btn-primary me-2">Gerenciar</a>
+                <a href="#" class="btn btn-primary">Associar</a>
+              </div>
             </div>
           </div>
         </div>

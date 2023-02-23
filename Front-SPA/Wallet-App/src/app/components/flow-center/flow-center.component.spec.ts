@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FlowCentersComponent } from './flow-centers.component';
+import { FlowCenterComponent } from './flow-center.component';
 
-describe('FlowCentersComponent', () => {
-  let component: FlowCentersComponent;
-  let fixture: ComponentFixture<FlowCentersComponent>;
+describe('FlowCenterComponent', () => {
+  let component: FlowCenterComponent;
+  let fixture: ComponentFixture<FlowCenterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FlowCentersComponent ]
+      declarations: [ FlowCenterComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FlowCentersComponent);
+    fixture = TestBed.createComponent(FlowCenterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

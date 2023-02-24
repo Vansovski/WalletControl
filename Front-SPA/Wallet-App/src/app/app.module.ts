@@ -5,23 +5,27 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FlowsComponent } from './flows/flows.component';
-import { FlowCentersComponent } from './flow-centers/flow-centers.component';
-import { ExpensesComponent } from './expenses/expenses.component';
-import { ExpensesItemsComponent } from './expenses/expenses-items/expenses-items.component';
+import { FlowsComponent } from './components/flows/flows.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavComponent } from './shared/nav/nav.component';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { FlowCenterComponent } from './components/flow-center/flow-center.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FlowsComponent,
-    FlowCentersComponent,
-    ExpensesComponent,
-    ExpensesItemsComponent
+    NavComponent,
+    FlowCenterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    CollapseModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

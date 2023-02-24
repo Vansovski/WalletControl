@@ -7,5 +7,5 @@ public class FlowCenter
     public double PercentOfCenterFlow { get; set; }
     public double TotalAmount { get; set; }
 
-    public IEnumerable<Expense>? Espenses { get; set; }
+    public IEnumerable<Expense>? Expenses { get; set; }
 }

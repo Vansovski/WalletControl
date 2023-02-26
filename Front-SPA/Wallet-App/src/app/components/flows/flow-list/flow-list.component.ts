@@ -29,4 +29,13 @@ export class FlowListComponent implements OnInit {
 
     this.router.navigate([`flows/detail/${id}`])
   }
+
+  public deleteFlow(id: number): void {
+
+    this.flowService.deleteFlow(id).subscribe({
+      next: () => this.getFlows(),
+      error: (error) => console.log(error),
+      complete: () => console.log('Delete Flows'),
+  });
+  }
 }

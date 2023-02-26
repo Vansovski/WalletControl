@@ -24,7 +24,8 @@ export class FlowDetailsComponent implements OnInit {
 
   public validation(): void {
     this.form = this.fb.group({
-      name:   ['', [Validators.required, Validators.minLength(4)]]
+      name: ['', [Validators.required, Validators.minLength(4)]],
+      kind: ['0', [Validators.required]]
     });
   }
 }

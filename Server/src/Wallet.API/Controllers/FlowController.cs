@@ -42,7 +42,7 @@ public class FlowController : ControllerBase
         return Ok(result);
     }
 
-    [HttpDelete]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Del(int id)
     {
         try

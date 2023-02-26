@@ -12,19 +12,10 @@ export class FlowsComponent implements OnInit {
   constructor(private flowService: FlowService) {}
 
   public ngOnInit(): void {
-    this.getFlows();
+
   }
 
-  public flows: Flow[] = [];
+  public createFlow(): void {
 
-  public getFlows(): void {
-
-    this.flowService.getFlows().subscribe(
-      {
-        next : (response) => (this.flows = response),
-        error: (error) => console.log(error),
-        complete: () => console.log('Get Flows')
-      });
   }
-
 }

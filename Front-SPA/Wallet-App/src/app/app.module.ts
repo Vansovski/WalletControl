@@ -12,6 +12,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { HomeComponent } from './components/home/home.component';
 import { FlowListComponent } from './components/flows/flow-list/flow-list.component';
 import { FlowDetailsComponent } from './components/flows/flow-details/flow-details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import { FlowDetailsComponent } from './components/flows/flow-details/flow-detai
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     CollapseModule.forRoot(),
   ],
   providers: [],

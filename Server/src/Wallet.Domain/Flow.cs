@@ -8,6 +8,6 @@ public class Flow
     public string? Name { get; set; }
     public KindFlow Kind { get; set; }
     public bool Active { get; set; }
-
+    public string? Description { get; set; }
     public IEnumerable<FlowCenter>? Centers { get; set; }
 }

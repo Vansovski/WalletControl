@@ -15,6 +15,8 @@ public class FlowPersistence : GeralPersistence, IFlowPersistence
     {
         IQueryable<Flow>? query = _context.Flows;
 
+         query = query?.AsNoTracking();
+
         if (query != null) return await query.ToArrayAsync();
 
         return null;
@@ -23,6 +25,8 @@ public class FlowPersistence : GeralPersistence, IFlowPersistence
     public async Task<Flow?> GetAsync(int id)
     {
         IQueryable<Flow>? query = _context.Flows;
+
+        query = query?.AsNoTracking();
 
         if (query != null) return await query.FirstOrDefaultAsync(flow => flow.Id == id);
 

@@ -66,7 +66,7 @@ export class FlowDetailsComponent implements OnInit {
   public saveFlow(): void {
     const flowIdParam = this.router.snapshot.paramMap.get('id');
 
-    this.flow = { ...this.form.value, "id": flowIdParam };
+    this.flow = { ...this.form.value};
     this.flow.kind = this.f.kind.value == '1' ? 1 : 0;
 
     if (flowIdParam == null) {
@@ -80,7 +80,9 @@ export class FlowDetailsComponent implements OnInit {
         });
       }
     } else {
+      this.flow.id =  +flowIdParam;
       this.flowService.updateFlow(this.flow).subscribe({
+
         next: () => {},
         error: (error) => {
           console.log(error);

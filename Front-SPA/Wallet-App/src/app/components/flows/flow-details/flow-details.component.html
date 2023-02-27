@@ -28,19 +28,20 @@
             class="form-control"
             id="exampleTextarea"
             placeholder="Despesas gerais, alimentação, saúde...."
+            formControlName="description"
           ></textarea>
         </div>
 
         <div class="form-group">
           <legend class="mt-4">Tipo de fluxo</legend>
           <div class="form-check">
-            <input class="form-check-input" type="radio" formControlName="kind" name="kind" id="optionsRadios1" value="0" checked="">
+            <input class="form-check-input" type="radio" formControlName="kind" name="kind" id="optionsRadios1" value=0 checked="">
             <label class="form-check-label" for="optionsRadios1">
               Entrada
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" formControlName="kind" name="kind" id="optionsRadios2" value="1">
+            <input class="form-check-input" type="radio" formControlName="kind" name="kind" id="optionsRadios2" value=1>
             <label class="form-check-label" for="optionsRadios2">
               Saída
             </label>
@@ -55,7 +56,7 @@
         <button class="btn btn-outline-secondary me-auto border">
           Cancelar Alteração
         </button>
-        <button class="btn btn-success">
+        <button class="btn btn-success" (click)="saveFlow()">
           Salvar Evento
         </button>
       </div>
@@ -65,7 +66,7 @@
 
 <hr />
 
-<div>
+<div *ngIf="f.kind.value == '1'">
   <div class="card p-2">
     <div class="d-flex p-3">
       <div class="me-auto">

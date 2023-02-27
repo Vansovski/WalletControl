@@ -19,7 +19,7 @@ export class FlowService {
     return this.http.get<Flow>(`${this.baseUrl}/${id}`);
   }
 
-  postFlows(flow: Flow): Observable<Flow> {
+  postFlow(flow: Flow): Observable<Flow> {
     return this.http.post<Flow>(this.baseUrl, flow);
   }
 

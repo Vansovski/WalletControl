@@ -6,7 +6,7 @@ public class FlowConnection
     public Flow? InFlow { get; set; }
 
     public int OutFlowId { get; set; }
-    public Flow? InutFlow { get; set; }
+    public Flow? OutFlow { get; set; }
 
     public double PercentOfFlow { get; set; }
     public double TotalAmountInsideFlow { get; set; }

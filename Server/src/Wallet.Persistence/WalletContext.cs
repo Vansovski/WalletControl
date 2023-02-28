@@ -16,12 +16,18 @@ public class WalletContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Flow>()
+       .HasMany(connections => connections.Connections)
+       .WithOne(connection => connection.InFlow)
+       .OnDelete(DeleteBehavior.Restrict);
+
         modelBuilder.Entity<FlowConnection>()
-            .HasKey(connection => new { connection.InFlow, connection.OutFlowId });
+            .HasKey(connection => new { connection.InFlowId, connection.OutFlowId });
 
         modelBuilder.Entity<Flow>()
        .HasMany(flow => flow.Flows)
        .WithOne(flow => flow.ParentFlow);
+
 
         base.OnModelCreating(modelBuilder);
     }

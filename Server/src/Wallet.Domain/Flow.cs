@@ -13,4 +13,5 @@ public class Flow
     public string? Description { get; set; }
     public IEnumerable<FlowConnection>? Connections { get; set; }
     public IEnumerable<Flow>? Flows { get; set; }
+    public IEnumerable<Item>? Items { get; set; }
 }

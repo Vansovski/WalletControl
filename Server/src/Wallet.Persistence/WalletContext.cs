@@ -13,7 +13,6 @@ public class WalletContext : DbContext
     public DbSet<FlowConnection>? FlowConnections { get; set; }
     public DbSet<Item>? Items { get; set; }
 
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Flow>()
@@ -27,7 +26,6 @@ public class WalletContext : DbContext
         modelBuilder.Entity<Flow>()
        .HasMany(flow => flow.Flows)
        .WithOne(flow => flow.ParentFlow);
-
 
         base.OnModelCreating(modelBuilder);
     }

@@ -1,6 +1,6 @@
 namespace Wallet.Domain.Enums;
 
-public enum StageItemExpense
+public enum StageItem
 {
     planned,
     paid,

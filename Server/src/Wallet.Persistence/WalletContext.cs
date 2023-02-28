@@ -10,16 +10,18 @@ public class WalletContext : DbContext
 
     }
     public DbSet<Flow>? Flows { get; set; }
-    public DbSet<FlowCenter>? FlowCenters { get; set; }
-    public DbSet<Expense>? Expenses { get; set; }
+    public DbSet<FlowConnection>? FlowConnections { get; set; }
     public DbSet<Item>? Items { get; set; }
-    public DbSet<ExpenseItem>? ExpenseItems { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<ExpenseItem>()
-            .HasKey(expenseItem => new { expenseItem.ExpenseId, expenseItem.ItemId });
+        modelBuilder.Entity<FlowConnection>()
+            .HasKey(connection => new { connection.InFlow, connection.OutFlowId });
+
+        modelBuilder.Entity<Flow>()
+       .HasMany(flow => flow.Flows)
+       .WithOne(flow => flow.ParentFlow);
 
         base.OnModelCreating(modelBuilder);
     }

@@ -15,7 +15,9 @@ public class FlowPersistence : GeralPersistence, IFlowPersistence
     {
         IQueryable<Flow>? query = _context.Flows;
 
-         query = query?.AsNoTracking();
+         query = query?
+                    .Include(flow => flow.Flows)
+                    .AsNoTracking();
 
         if (query != null) return await query.ToArrayAsync();
 
